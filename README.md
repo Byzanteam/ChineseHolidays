@@ -1,43 +1,19 @@
-# ChineseHolidays
+### 数据
+https://github.com/GreenNerd/ChineseHolidaysData
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/chinese_holidays`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
+### 功能
+- 判断一个日期是否为节假日\工作日？
 ```ruby
-gem 'chinese_holidays'
+  ChineseHolidays.is_holiday?(Date.parse('2018-1-1')) # => true
+  ChineseHolidays.is_holiday?(Date.parse('2018-1-4')) # => false
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install chinese_holidays
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/chinese_holidays. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the ChineseHolidays project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/chinese_holidays/blob/master/CODE_OF_CONDUCT.md).
+```ruby
+  # 2018-4-8 is sunday
+  ChineseHolidays.is_workday?(Date.parse('2018-4-8')) # => true
+  ChineseHolidays.is_workday?(Date.parse('2018-1-4')) # => false
+```
+- 获取一年的节假日\工作日
+```ruby
+  ChineseHolidays.get_freedays_of(2018)
+  ChineseHolidays.get_workdays_of(2018)
+```
