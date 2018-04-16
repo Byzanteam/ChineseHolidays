@@ -17,3 +17,6 @@ https://github.com/GreenNerd/ChineseHolidaysData
   ChineseHolidays.get_freedays_of(2018)
   ChineseHolidays.get_workdays_of(2018)
 ```
+
+- 删除缓存的json文件
+`ChineseHolidays.remove_local_cache`

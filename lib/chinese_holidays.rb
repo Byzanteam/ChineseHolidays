@@ -37,6 +37,14 @@ module ChineseHolidays
       @local_workdays[year]
     end
 
+    def remove_local_cache
+      root_path = File.expand_path '../..', __FILE__
+      Dir.glob(root_path + '/lib/data/*.json').each do |cache_file|
+        File.delete(cache_file)
+      end
+      true
+    end
+
     private
 
     def load_local_holidays
