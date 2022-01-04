@@ -3,7 +3,7 @@
     {
       "name":"new_year_s_day",
       "freedays_range":[
-        "2021-01-01"
+        "2021-01-01",
         "2021-01-03"
       ],
       "workdays":[]
