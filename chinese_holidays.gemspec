@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Chinese Holidays}
   spec.description   = %q{Chinese Holidays}
-  spec.homepage      = "https://github.com/GreenNerd/ChineseHolidays"
+  spec.homepage      = "https://github.com/Byzanteam/ChineseHolidays"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
