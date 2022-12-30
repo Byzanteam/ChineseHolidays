@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "name": "new_year_s_day",
+      "freedays_range": [
+        "2022-12-31",
+        "2023-01-02"
+      ],
+      "workdays": []
+    },
+    {
+      "name": "spring_festival",
+      "freedays_range": [
+        "2023-01-21",
+        "2023-01-27"
+      ],
+      "workdays": [
+        "2023-01-28",
+        "2023-01-29"
+      ]
+    },
+    {
+      "name": "qingming_festival",
+      "freedays_range": [
+        "2023-04-05"
+      ],
+      "workdays": []
+    },
+    {
+      "name": "labor_day",
+      "freedays_range": [
+        "2023-04-29",
+        "2023-05-03"
+      ],
+      "workdays": [
+        "2023-04-23",
+        "2023-05-06"
+      ]
+    },
+    {
+      "name": "dragon_boat_festival",
+      "freedays_range": [
+        "2023-06-22",
+        "2023-06-24"
+      ],
+      "workdays": [
+        "2023-06-25"
+      ]
+    },
+    {
+      "name": "mid_autumn_festival",
+      "freedays_range": [
+        "2023-09-29"
+      ],
+      "workdays": []
+    },
+    {
+      "name": "national_day",
+      "freedays_range": [
+        "2023-09-30",
+        "2023-10-06"
+      ],
+      "workdays": [
+        "2023-10-07",
+        "2023-10-08"
+      ]
+    }
+  ]
+}
