@@ -20,19 +20,11 @@ module ChineseHolidays
     def get_freedays_of(year)
       load_local_holidays
 
-      if @local_workdays[year].empty?
-        request_remote_holidays(year)
-      end
-
       @local_freedays[year]
     end
 
     def get_workdays_of(year)
       load_local_holidays
-
-      if @local_workdays[year].empty?
-        request_remote_holidays(year)
-      end
 
       @local_workdays[year]
     end
@@ -60,38 +52,12 @@ module ChineseHolidays
       end
     end
 
-    def request_remote_holidays(year)
-      begin
-        response = RestClient.get(remote_holidays_url(year))
-      rescue RestClient::Exception => e
-        raise NotSupportedYearError.new("year: #{year}")
-      end
-
-      body = response.body
-      holidays_data = JSON.parse(body)['data']
-      parse_holidays year, holidays_data
-
-      store_holidays(year, body)
-    end
-
     def parse_holidays(year, holidays_data)
       holidays_data.map do |holiday_data|
         holiday = Holiday.new(holiday_data['name'], holiday_data['freedays_range'], holiday_data['workdays'])
         @local_freedays[year] |= holiday.freedays
         @local_workdays[year] |= holiday.workdays
       end
-    end
-
-    def store_holidays(year, data)
-      root_path = File.expand_path '../..', __FILE__
-
-      File.open(root_path + "/lib/data/#{year}.json", 'w') do |f|
-        f.puts data
-      end
-    end
-
-    def remote_holidays_url(year)
-      "https://raw.githubusercontent.com/GreenNerd/ChineseHolidaysData/master/#{year}.json"
     end
   end
 end
