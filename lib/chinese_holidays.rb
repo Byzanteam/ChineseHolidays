@@ -9,7 +9,14 @@ module ChineseHolidays
 
   class << self
     def is_holiday?(date)
-      get_freedays_of(date.year).include?(date)
+      freedays = get_freedays_of(date.year)
+
+      # 如果还未更新节假日的年份，就用是否是周末判断
+      unless freedays.empty?
+        freedays.include?(date)
+      else
+        date.saturday? || date.sunday?
+      end
     end
 
     def is_workday?(date)
